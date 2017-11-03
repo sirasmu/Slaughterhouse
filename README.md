@@ -5,6 +5,7 @@ Rich picture / Overview diagram
 
 Class diagram
 
+![TDD](https://raw.githubusercontent.com/sirasmu/Slaugtherhouse/master/TestDrivenDevelopment.PNG)
 
 ## Simulation of slaughterhouse
 
