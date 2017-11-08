@@ -5,7 +5,7 @@ Rich picture / Overview diagram
 
 Class diagram
 
-![Model](https://raw.githubusercontent.com/sirasmu/Slaughterhouse/master/Class%20Diagram%20Slaughterhouse.png?token=AQ9lL0Z55nKYRkg4cAXjdYGTbfRSedvOks5aDFI9wA%3D%3D)
+![Model](https://raw.githubusercontent.com/sirasmu/Slaughterhouse/master/Class%20Diagram%20Slaughterhouse.png?token=AQ9lL8mRsAGBGHpa3ZEPATWMX5IRIRftks5aDFSSwA%3D%3D)
 
 ## Simulation of slaughterhouse
 
