@@ -36,8 +36,8 @@ public class DataController
 		adapter.saveBadPackages(packages);
 	}
 	
-	public PackageCollection getBadPackages(PackageCollection packages)
+	public PackageCollection getBadPackages(Package p)
 	{
-		return adapter.getBadPackages(packages);
+		return adapter.getBadPackages(p);
 	}	
 }
