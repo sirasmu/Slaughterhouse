@@ -1,6 +1,8 @@
-package model;
+package tier2.model;
 
-public class PackageHalfAnAnimal extends AbstractPackage
+import java.io.Serializable;
+
+public class PackageHalfAnAnimal extends AbstractPackage implements Serializable
 {	
 	public PackageHalfAnAnimal(TrayCollection origins, PartType type)
 	{

@@ -1,21 +1,21 @@
-package model;
+package tier2.model;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Tray
+public class Tray implements Serializable
 {
 	private String id;
 	private PartType type;
-	private double maxWeight;
+	private final double maxWeight= 1000.0;
 	private double weight;
 	private AnimalCollection animals;
 	
-	public Tray(double maxWeight, PartType type)
+	public Tray(PartType type)
 	{
-		id = SlaughterhouseUtilities.generateId();
+		this.id = SlaughterhouseUtilities.generateId();
 		this.type = type;
-		this.maxWeight = maxWeight;
-		weight = 0;
-		animals = new AnimalCollection();
+		this.weight = 0;
+		this.animals = new AnimalCollection();
 	}
 	
 	public String getId()
@@ -43,9 +43,16 @@ public class Tray
 		return animals;
 	}
 	
-	public void addPart(Animal animal)
+
+	public void addPartFromAnimal(Animal animal, double weight)
 	{
 		animals.add(animal);
+		this.weight+=weight;
+	}
+	
+	public boolean isReadyForPackaging()
+	{
+		return weight >= maxWeight - 50.0;	
 	}
 	
 }

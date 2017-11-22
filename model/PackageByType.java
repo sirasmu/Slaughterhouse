@@ -1,7 +1,9 @@
-package model;
-import com.sun.org.apache.xerces.internal.impl.dv.InvalidDatatypeValueException;
+package tier2.model;
 
-public class PackageByType extends AbstractPackage
+import java.io.Serializable;
+
+
+public class PackageByType extends AbstractPackage implements Serializable
 {
 	private PartType type;
 	

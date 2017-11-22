@@ -1,7 +1,8 @@
-package model;
+package tier2.model;
+import java.io.Serializable;
 import java.util.UUID;
 
-public class SlaughterhouseUtilities
+public class SlaughterhouseUtilities implements Serializable
 {
 	public static String generateId()
 	{

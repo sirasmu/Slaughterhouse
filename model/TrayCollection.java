@@ -1,8 +1,9 @@
-package model;
+package tier2.model;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class TrayCollection
+public class TrayCollection implements Serializable
 {
 	private ArrayList<Tray> trays;
 	
@@ -29,4 +30,18 @@ public class TrayCollection
 		} 
 		return true;
 	}
+	
+	/*
+	 * Gets the first available tray which still has not been filled completely
+	 */
+	public Tray getAvailableTray(double weight, PartType ptype){
+		for(Tray tr: trays){
+			if(tr.getWeight()+weight<tr.getMaxWeight()&&!tr.isReadyForPackaging()){
+				return tr;
+			}
+		}
+		return new Tray(ptype);	
+	}
+	
+	
 }

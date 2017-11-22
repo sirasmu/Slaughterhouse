@@ -1,7 +1,8 @@
-package model;
+package tier2.model;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class AnimalCollection
+public class AnimalCollection implements Serializable
 {
 	private ArrayList<Animal> animals;
 	
@@ -14,4 +15,6 @@ public class AnimalCollection
 	{
 		animals.add(animal);
 	}
+	
+	
 }

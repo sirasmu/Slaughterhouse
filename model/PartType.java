@@ -1,6 +1,8 @@
-package model;
+package tier2.model;
 
-public enum PartType
+import java.io.Serializable;
+
+public enum PartType implements Serializable
 {
 	Leg, Ham
 }
