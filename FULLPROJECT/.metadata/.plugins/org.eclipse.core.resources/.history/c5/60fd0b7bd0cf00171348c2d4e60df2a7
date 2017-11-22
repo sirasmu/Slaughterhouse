@@ -1,0 +1,32 @@
+package tier3.DatabaseAdapter;
+
+import common.model.*;
+import java.sql.Date;
+
+public class TestDatabase {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		@SuppressWarnings("deprecation")
+		Animal animal1=new Animal(101.5,new Date(12,12,2017));
+		Animal animal2=new Animal(102.5,new Date(13,12,2017));
+		Animal animal3=new Animal(103.5,new Date(14,12,2017));
+		Animal animal4=new Animal(104.5,new Date(15,12,2017));
+		Animal animal5=new Animal(105.5,new Date(16,12,2017));
+		
+		AnimalCollection animalCollection= new AnimalCollection();
+		animalCollection.add(animal1);
+		animalCollection.add(animal2);
+		animalCollection.add(animal3);
+		animalCollection.add(animal4);
+		animalCollection.add(animal5);
+	
+		IDatabaseAdapter adapter = new DatabaseAdapter();
+		
+		
+		
+		
+	}
+
+}

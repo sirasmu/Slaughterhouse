@@ -24,7 +24,7 @@ public class DataController
 	
 	public void saveAnimals(AnimalCollection animals)
 	{
-		view.displayMessage("Saving animals...");
+		view.printLog("Saving animals...");
 		try {
 			adapter.saveAnimals(animals);
 		} catch (SQLException e) {
@@ -35,7 +35,7 @@ public class DataController
 	
 	public void saveTrays(TrayCollection trays)
 	{
-		view.displayMessage("Saving trays...");
+		view.printLog("Saving trays...");
 		try {
 			adapter.saveTrays(trays);
 		} catch (SQLException e) {
@@ -46,7 +46,7 @@ public class DataController
 	
 	public void savePackages(PackageCollection packages)
 	{
-		view.displayMessage("Saving packages...");
+		view.printLog("Saving packages...");
 		try {
 			adapter.savePackages(packages);
 		} catch (SQLException e) {
@@ -57,7 +57,7 @@ public class DataController
 	
 	public void saveBadPackages(PackageCollection packages)
 	{
-		view.displayMessage("Saving bad packages...");
+		view.printLog("Saving bad packages...");
 		try {
 			adapter.saveBadPackages(packages);
 		} catch (SQLException e) {
@@ -68,7 +68,7 @@ public class DataController
 	
 	public PackageCollection getBadPackages(Package p)
 	{
-		view.displayMessage("Retrieving other bad packages...");
+		view.printLog("Retrieving other bad packages...");
 		try {
 			return adapter.getBadPackages(p);
 		} catch (SQLException e) {

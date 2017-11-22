@@ -5,29 +5,30 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import tier3.view.View;
 import common.model.Animal;
 import common.model.AnimalCollection;
 import common.model.PackageCollection;
 import common.model.TrayCollection;
 
-
 public class DatabaseAdapter implements IDatabaseAdapter {
-	
-	Connection conn;
-	
+
+	// Connection conn;
+	View view;
 
 	public DatabaseAdapter() {
-
-		this.conn= DatabaseConnection.requestConnection();
+		 this.view= new View();
+		// this.conn= DatabaseConnection.requestConnection();
 	}
 
 	@Override
 	public void saveAnimals(AnimalCollection animals) throws SQLException {
 
+		Connection conn = DatabaseConnection.requestConnection();
 		int index = 0;
 		ArrayList<Animal> listAnimal = animals.getAnimalCollection();
 		for (Animal an : listAnimal) {
-
+			view.printLog("Saving animal with id: " + an.getAnimalId());
 			String query = "INSERT INTO Animal (" + " animalId,"
 					+ " dateArrived," + " farmId,"
 					+ " weight ) VALUES (?, ?, ?, ?)";
@@ -45,6 +46,8 @@ public class DatabaseAdapter implements IDatabaseAdapter {
 			st.close();
 
 		}
+
+		DatabaseConnection.closeConnection();
 
 	}
 

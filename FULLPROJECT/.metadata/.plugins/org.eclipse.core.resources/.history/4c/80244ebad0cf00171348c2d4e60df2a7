@@ -69,20 +69,4 @@ public class DatabaseConnection {
 	}
 	
 	
-	public static void closeConnection(){
-		try {
-			conn.close();
-			System.out.println("connection closed");
-		
-
-		} catch (SQLException e) {
-			System.out.println("error closing connection");
-			System.out.println(e.getMessage());
-			e.printStackTrace();
-			System.exit(0);
-
-		}
-	}
-	
-	
 }

@@ -69,7 +69,7 @@ public class DatabaseConnection {
 	}
 	
 	
-	public static void closeConnection(){
+	public void closeConnection(){
 		try {
 			conn.close();
 			System.out.println("connection closed");
