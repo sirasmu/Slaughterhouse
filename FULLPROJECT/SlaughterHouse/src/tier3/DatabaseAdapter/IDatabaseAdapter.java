@@ -1,5 +1,7 @@
 package tier3.DatabaseAdapter;
 
+import java.sql.SQLException;
+
 import common.model.AnimalCollection;
 import common.model.PackageCollection;
 import common.model.TrayCollection;
@@ -11,9 +13,9 @@ import common.model.TrayCollection;
  */
 public interface IDatabaseAdapter
 {
-	void saveAnimals(AnimalCollection animals);
-	void saveTrays(TrayCollection trays);
-	void savePackages(PackageCollection packages);
-	void saveBadPackages(PackageCollection packages);
-	PackageCollection getBadPackages(Package p);
+	void saveAnimals(AnimalCollection animals) throws SQLException;
+	void saveTrays(TrayCollection trays) throws SQLException;
+	void savePackages(PackageCollection packages) throws SQLException;
+	void saveBadPackages(PackageCollection packages) throws SQLException;
+	PackageCollection getBadPackages(Package p) throws SQLException;
 }

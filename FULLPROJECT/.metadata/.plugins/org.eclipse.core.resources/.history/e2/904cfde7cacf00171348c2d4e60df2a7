@@ -1,0 +1,142 @@
+package common.model;
+
+import java.io.Serializable;
+import java.sql.Date;
+
+public class Animal implements Serializable
+{
+	private String animalId;
+	private double weight;
+	private String farmID;
+	private Date dateArrived;
+	private boolean isSplit;
+	
+	public Animal(double weight,Date dateArrived)
+	{
+		animalId = SlaughterhouseUtilities.generateId();
+		this.weight = weight;
+		this.farmID=SlaughterhouseUtilities.generateId();
+		this.dateArrived=dateArrived;
+		this.isSplit=false;
+	}
+	
+	
+	public Animal(double weight)
+	{
+		animalId = SlaughterhouseUtilities.generateId();
+		this.weight = weight;
+		
+	}
+
+
+	public String getAnimalId() {
+		return animalId;
+	}
+
+
+	public void setAnimalId(String animalId) {
+		this.animalId = animalId;
+	}
+
+
+	public double getWeight() {
+		return weight;
+	}
+
+
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+
+
+	public String getFarmID() {
+		return farmID;
+	}
+
+
+	public void setFarmID(String farmID) {
+		this.farmID = farmID;
+	}
+
+
+	public Date getDateArrived() {
+		return dateArrived;
+	}
+
+
+	public void setDateArrived(Date dateArrived) {
+		this.dateArrived = dateArrived;
+	}
+
+
+	public boolean isSplit() {
+		return isSplit;
+	}
+
+
+	public void setSplit(boolean isSplit) {
+		this.isSplit = isSplit;
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((animalId == null) ? 0 : animalId.hashCode());
+		result = prime * result
+				+ ((dateArrived == null) ? 0 : dateArrived.hashCode());
+		result = prime * result + ((farmID == null) ? 0 : farmID.hashCode());
+		result = prime * result + (isSplit ? 1231 : 1237);
+		long temp;
+		temp = Double.doubleToLongBits(weight);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Animal other = (Animal) obj;
+		if (animalId == null) {
+			if (other.animalId != null)
+				return false;
+		} else if (!animalId.equals(other.animalId))
+			return false;
+		if (dateArrived == null) {
+			if (other.dateArrived != null)
+				return false;
+		} else if (!dateArrived.equals(other.dateArrived))
+			return false;
+		if (farmID == null) {
+			if (other.farmID != null)
+				return false;
+		} else if (!farmID.equals(other.farmID))
+			return false;
+		if (isSplit != other.isSplit)
+			return false;
+		if (Double.doubleToLongBits(weight) != Double
+				.doubleToLongBits(other.weight))
+			return false;
+		return true;
+	}
+
+
+	public boolean isAnimalSplit() {
+		// TODO Auto-generated method stub
+		return isSplit;
+	}
+
+	
+
+	
+	
+	
+}

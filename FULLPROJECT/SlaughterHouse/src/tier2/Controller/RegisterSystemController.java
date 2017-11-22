@@ -80,7 +80,7 @@ public class RegisterSystemController {
 	 */
 	public void registerAnimal(Animal animal){
 		animals.add(animal);
-		view.printLog("Animal registered: "+ animal.getId());
+		view.printLog("Animal registered: "+ animal.getAnimalId());
 		
 		//SAVE BACKUP TO LOCAL STORAGE
 		modelController.saveAlltoLocalStorage(getCollectionOfAllData());

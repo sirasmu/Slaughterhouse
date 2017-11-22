@@ -1,0 +1,119 @@
+
+package tier3.DatabaseAdapter;
+/*
+ * Implementation of question number one
+ * 
+ * Only contains specific code for the question. Handling of statistics gathering
+ * is inherited from QuestionRunner
+ */
+
+import java.io.FileNotFoundException;
+import java.sql.*;
+import java.util.ArrayList;
+
+import common.model.*;
+
+public class DataAdaptor extends QuestionRunner implements IDatabaseAdapter {
+
+	
+	
+	public DataAdaptor(Connection iconn) {
+
+		this.conn = iconn;
+	}
+
+	/*public void runCase() throws SQLException, FileNotFoundException {
+
+		Statement stmtMother = conn.createStatement();
+		Statement stmtChild = conn.createStatement();
+		int noOfChildren = 0;
+		
+		//ME added flush pool data query
+		stmtMother.executeQuery("ALTER SYSTEM FLUSH SHARED_POOL");
+		ResultSet rsMother = stmtMother.executeQuery("select id, hairColor from mother");
+
+		while (rsMother.next()) {
+			if (rsMother.getString("hairColor").equals("blond")) {
+				ResultSet rsChild = stmtChild
+						.executeQuery("select id, yearBorn from" + " child where motherID = " + rsMother.getInt("id"));
+				while (rsChild.next()) {
+					if (rsChild.getInt("yearBorn") == 2012) {
+						noOfChildren++;
+					}
+				}
+				rsChild.close();
+				rsChild = null;
+			}
+		}
+
+		rsMother.close();
+		rsMother = null;
+		stmtMother.close();
+		stmtChild.close();
+		MyTextFileIO textFile= new MyTextFileIO();
+		System.out.println("***********\n***********\n(1)number of children born in 2012 by blond mothers: " + noOfChildren);
+		textFile.appendToFile("outputFromDatabaseExercise.txt", "***********\n***********\n(1)number of children born in 2012 by blond mothers: " + noOfChildren);
+
+	}*/
+
+	public void saveAnimals(AnimalCollection animals) throws SQLException {
+		
+		int index=0;
+		ArrayList<Animal> listAnimal= animals.getCollection();
+		for(Animal an: listAnimal){
+			
+		
+		  String query = "INSERT INTO Animal ("
+		    + " animalId,"
+		    + " dateArrived,"
+		    + " farmId,"
+		    + " weight ) VALUES (?, ?, ?, ?)";
+
+		
+		    // set all the preparedstatement parameters
+		    PreparedStatement st = conn.prepareStatement(query);
+		    st.setString(1, an.getAnimalId());
+		    st.setDate(2, an.getDateArrived());
+		    st.setString(3, an.getFarmID());
+		    st.setDouble(4, an.getWeight());
+		    index++;
+
+		    // execute the preparedstatement insert
+		    st.executeUpdate();
+		    st.close();
+		  
+		 
+		}
+		
+	}
+
+	@Override
+	public void saveTrays(TrayCollection trays) throws SQLException {
+		
+		
+	}
+
+	@Override
+	public void savePackages(PackageCollection packages) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void saveBadPackages(PackageCollection packages) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public PackageCollection getBadPackages(Package p) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void runCase() throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+}

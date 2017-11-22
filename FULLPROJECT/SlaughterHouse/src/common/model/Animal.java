@@ -1,52 +1,106 @@
 package common.model;
 
 import java.io.Serializable;
+import java.sql.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class Animal implements Serializable
 {
-	private String id;
+	private String animalId;
 	private double weight;
+	private String farmID;
+	private Date dateArrived;
 	private boolean isSplit;
+	
+	public Animal(double weight,Date dateArrived)
+	{
+		animalId = SlaughterhouseUtilities.generateId();
+		this.weight = weight;
+		this.farmID=SlaughterhouseUtilities.generateId();
+		this.dateArrived=dateArrived;
+		this.isSplit=false;
+	}
+	
 	
 	public Animal(double weight)
 	{
-		id = SlaughterhouseUtilities.generateId();
+		animalId = SlaughterhouseUtilities.generateId();
 		this.weight = weight;
+		this.farmID=SlaughterhouseUtilities.generateId();
+		
+		Calendar calendar = GregorianCalendar.getInstance();
+		this.dateArrived= new Date(calendar.YEAR, calendar.MONTH, calendar.DAY_OF_MONTH);
 		this.isSplit=false;
 	}
 
-	public String getId() {
-		return id;
+
+	public String getAnimalId() {
+		return animalId;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+
+	public void setAnimalId(String animalId) {
+		this.animalId = animalId;
 	}
+
 
 	public double getWeight() {
 		return weight;
 	}
 
+
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
-	
-	public boolean isAnimalSplit()
-	{
+
+
+	public String getFarmID() {
+		return farmID;
+	}
+
+
+	public void setFarmID(String farmID) {
+		this.farmID = farmID;
+	}
+
+
+	public Date getDateArrived() {
+		return dateArrived;
+	}
+
+
+	public void setDateArrived(Date dateArrived) {
+		this.dateArrived = dateArrived;
+	}
+
+
+	public boolean isSplit() {
 		return isSplit;
 	}
+
+
+	public void setSplit(boolean isSplit) {
+		this.isSplit = isSplit;
+	}
+
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result
+				+ ((animalId == null) ? 0 : animalId.hashCode());
+		result = prime * result
+				+ ((dateArrived == null) ? 0 : dateArrived.hashCode());
+		result = prime * result + ((farmID == null) ? 0 : farmID.hashCode());
 		result = prime * result + (isSplit ? 1231 : 1237);
 		long temp;
 		temp = Double.doubleToLongBits(weight);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -57,10 +111,20 @@ public class Animal implements Serializable
 		if (getClass() != obj.getClass())
 			return false;
 		Animal other = (Animal) obj;
-		if (id == null) {
-			if (other.id != null)
+		if (animalId == null) {
+			if (other.animalId != null)
 				return false;
-		} else if (!id.equals(other.id))
+		} else if (!animalId.equals(other.animalId))
+			return false;
+		if (dateArrived == null) {
+			if (other.dateArrived != null)
+				return false;
+		} else if (!dateArrived.equals(other.dateArrived))
+			return false;
+		if (farmID == null) {
+			if (other.farmID != null)
+				return false;
+		} else if (!farmID.equals(other.farmID))
 			return false;
 		if (isSplit != other.isSplit)
 			return false;
@@ -69,6 +133,16 @@ public class Animal implements Serializable
 			return false;
 		return true;
 	}
+
+
+	public boolean isAnimalSplit() {
+		// TODO Auto-generated method stub
+		return isSplit;
+	}
+
+	
+
+	
 	
 	
 }

@@ -1,5 +1,7 @@
 package tier3.Controller;
 
+import java.sql.SQLException;
+
 import org.omg.PortableServer.AdapterActivatorOperations;
 
 import tier3.DatabaseAdapter.DatabaseAdapter;
@@ -23,30 +25,56 @@ public class DataController
 	public void saveAnimals(AnimalCollection animals)
 	{
 		view.displayMessage("Saving animals...");
-		adapter.saveAnimals(animals);
+		try {
+			adapter.saveAnimals(animals);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void saveTrays(TrayCollection trays)
 	{
 		view.displayMessage("Saving trays...");
-		adapter.saveTrays(trays);
+		try {
+			adapter.saveTrays(trays);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void savePackages(PackageCollection packages)
 	{
 		view.displayMessage("Saving packages...");
-		adapter.savePackages(packages);
+		try {
+			adapter.savePackages(packages);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void saveBadPackages(PackageCollection packages)
 	{
 		view.displayMessage("Saving bad packages...");
-		adapter.saveBadPackages(packages);
+		try {
+			adapter.saveBadPackages(packages);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public PackageCollection getBadPackages(Package p)
 	{
 		view.displayMessage("Retrieving other bad packages...");
-		return adapter.getBadPackages(p);
+		try {
+			return adapter.getBadPackages(p);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}	
 }

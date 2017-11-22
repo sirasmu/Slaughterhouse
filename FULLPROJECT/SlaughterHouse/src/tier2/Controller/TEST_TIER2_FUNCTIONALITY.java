@@ -33,7 +33,7 @@ public class TEST_TIER2_FUNCTIONALITY {
 		sysController.splitAnimal(pig1, pig1Parts);
 		
 		ArrayList<Animal> listAnimal = sysController.getAnimals().getAnimalCollection();
-		System.out.println("Animal id: "+listAnimal.get(0).getId()+
+		System.out.println("Animal id: "+listAnimal.get(0).getAnimalId()+
 				"\nAnimal weight: "+listAnimal.get(0).getWeight());
 		
 		//SHOW HAM TRAY
@@ -45,7 +45,7 @@ public class TEST_TIER2_FUNCTIONALITY {
 			System.out.println("Tray " + count1 + " id:" + tr.getId());
 			System.out.print("Tray " + count1 + " animals: ");
 			for (Animal an : tr.getAnimals().getAnimalCollection()) {
-				System.out.print(an.getId() + " | ");
+				System.out.print(an.getAnimalId() + " | ");
 			}
 			System.out.println();
 		}
@@ -59,7 +59,7 @@ public class TEST_TIER2_FUNCTIONALITY {
 			System.out.println("Tray " + count2 + " id:" + tr.getId());
 			System.out.print("Tray " + count2 + " animals: ");
 			for (Animal an : tr.getAnimals().getAnimalCollection()) {
-				System.out.print(an.getId() + " | ");
+				System.out.print(an.getAnimalId() + " | ");
 			}
 		}
 		System.out.println();
@@ -82,7 +82,7 @@ public class TEST_TIER2_FUNCTIONALITY {
 					System.out.println("Tray " + count3 + " id:" + tr.getId());
 					System.out.print("Tray " + count3 + " animals: ");
 					for (Animal an : tr.getAnimals().getAnimalCollection()) {
-						System.out.print(an.getId() + " | ");
+						System.out.print(an.getAnimalId() + " | ");
 					}
 				} 
 				System.out.println();

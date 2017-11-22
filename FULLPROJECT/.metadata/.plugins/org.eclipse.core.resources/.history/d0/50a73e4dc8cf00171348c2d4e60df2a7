@@ -1,0 +1,101 @@
+package dataAdaptor;
+
+
+/*   Main class. Handles creation and disposal of a connection to Oracle */
+/*   The individual case to be run is instantiated and passed the        */
+/*   connection                                                          */
+
+import java.io.FileNotFoundException;
+import java.sql.*;
+import java.util.GregorianCalendar;
+
+import common.model.Animal;
+import common.model.AnimalCollection;
+import common.model.PartType;
+import common.model.Tray;
+
+
+public class DBS2F2017AppCode {
+
+	private static Connection conn;
+
+	/* connection details */
+	/* connects via TNS */
+
+	final static String connectString = "jdbc:oracle:thin:@localhost:1521:assignment";
+	final static String userName = "sdj3";
+	final static String password = "";
+
+	public static void main(String[] args) throws FileNotFoundException {
+		
+		
+		
+		
+		//generated data
+//		@SuppressWarnings("deprecation")
+//		Animal animal1=new Animal(101.5,new Date(12,12,2017));
+//		Animal animal2=new Animal(102.5,new Date(13,12,2017));
+//		Animal animal3=new Animal(103.5,new Date(14,12,2017));
+//		Animal animal4=new Animal(104.5,new Date(15,12,2017));
+//		Animal animal5=new Animal(105.5,new Date(16,12,2017));
+//		
+//		AnimalCollection animalCollection= new AnimalCollection();
+//		animalCollection.add(animal1);
+//		animalCollection.add(animal2);
+//		animalCollection.add(animal3);
+//		animalCollection.add(animal4);
+//		animalCollection.add(animal5);
+	
+		
+
+		try {
+			DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+
+			conn = DriverManager.getConnection(connectString, userName, password);
+			conn.setAutoCommit(false);
+			System.out.println("connection established, autocommit off");
+			textFile.appendToFile("outputFromDatabaseExercise.txt", "connection established, autocommit off\n");			
+			/*
+			 * Individual questions are instantiated and run here Each question is a
+			 * specialization of the QuestionRunner class
+			 */
+
+			try {
+				QuestionRunner adaptor = new DataAdaptor(conn);
+				adaptor.saveAnimals(animalCollection);
+				
+			
+			} catch (Exception e) {
+				System.out.println("error running case, see messages for details");
+				System.out.println(e.getMessage());
+				textFile.appendToFile("outputFromDatabaseExercise.txt", "error running case, see messages for details\n"+e.getMessage()+"\n");
+				e.printStackTrace();
+
+			}
+
+		} catch (SQLException e) {
+			System.out.println("error establishing connection");
+			System.out.println("Connection string in use: "+connectString + "(user/pwd " + userName + "/" + password + ")" );
+			System.out.println(e.getMessage());
+			textFile.appendToFile("outputFromDatabaseExercise.txt", "error establishing connection\nConnection string in use: "
+			+connectString + "(user/pwd " + userName + "/" + password + ")\n"+e.getMessage()+"\n");
+			e.printStackTrace();
+
+		}
+
+		try {
+			conn.close();
+			System.out.println("connection closed");
+			textFile.appendToFile("outputFromDatabaseExercise.txt", "connection closed\n");
+			
+
+		} catch (SQLException e) {
+			System.out.println("error closing connection");
+			System.out.println(e.getMessage());
+			textFile.appendToFile("outputFromDatabaseExercise.txt", "error closing connection\n"+e.getMessage()+"\n");
+			e.printStackTrace();
+			System.exit(0);
+
+		}
+	}
+}

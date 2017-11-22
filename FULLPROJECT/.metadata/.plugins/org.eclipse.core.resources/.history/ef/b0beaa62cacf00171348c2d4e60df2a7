@@ -1,0 +1,74 @@
+package tier3.DatabaseAdapter;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import common.model.Animal;
+import common.model.AnimalCollection;
+import common.model.PackageCollection;
+import common.model.TrayCollection;
+
+public class DatabaseAdapter implements IDatabaseAdapter {
+	
+	Connection conn;
+	
+
+	public DatabaseAdapter() {
+
+		this.conn= DatabaseConnection.requestConnection();
+	}
+
+	@Override
+	public void saveAnimals(AnimalCollection animals) throws SQLException {
+
+		int index = 0;
+		ArrayList<Animal> listAnimal = animals.getAnimalCollection();
+		for (Animal an : listAnimal) {
+
+			String query = "INSERT INTO Animal (" + " animalId,"
+					+ " dateArrived," + " farmId,"
+					+ " weight ) VALUES (?, ?, ?, ?)";
+
+			// set all the preparedstatement parameters
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, an.getAnimalId());
+			st.setDate(2, an.getDateArrived());
+			st.setString(3, an.getFarmID());
+			st.setDouble(4, an.getWeight());
+			index++;
+
+			// execute the preparedstatement insert
+			st.executeUpdate();
+			st.close();
+
+		}
+
+	}
+
+	@Override
+	public void saveTrays(TrayCollection trays) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void savePackages(PackageCollection packages) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void saveBadPackages(PackageCollection packages) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public PackageCollection getBadPackages(Package p) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
