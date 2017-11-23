@@ -31,6 +31,7 @@ public class WebServiceManager
 			case WebServiceConfig.REGISTER_ANIMAL:
 				Animal animal = parseToAnimal(message);
 				controller.registerAnimal(animal);
+				return "Animal registered: " + animal;
 			case WebServiceConfig.REQUEST_UNCUT_ANIMALS:
 			case WebServiceConfig.ADD_PART_TO_TRAY:
 			case WebServiceConfig.REQUEST_TRAYS_READY_FOR_PACKAGING:

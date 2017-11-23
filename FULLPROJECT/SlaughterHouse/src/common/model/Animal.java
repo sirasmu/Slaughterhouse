@@ -140,9 +140,11 @@ public class Animal implements Serializable
 		return isSplit;
 	}
 
-	
-
-	
+	public String toString()
+	{
+		return  "Animal[" + animalId + "," + weight + "," + farmID + "," + dateArrived + "]";
+		
+	}
 	
 	
 }
