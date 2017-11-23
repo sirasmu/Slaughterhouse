@@ -27,6 +27,7 @@ public class Tray implements Serializable
 	{
 		return type;
 	}
+	
 
 	public double getMaxWeight()
 	{

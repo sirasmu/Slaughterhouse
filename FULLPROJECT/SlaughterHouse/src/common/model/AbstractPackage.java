@@ -1,12 +1,15 @@
 package common.model;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 public abstract class AbstractPackage implements Serializable
 {
 	private String id;
 	private TrayCollection origins;
 	private double weight;
+	private Date productPackageDate;
+	private String type;
 
 	public AbstractPackage(TrayCollection origins)
 	{
@@ -34,5 +37,15 @@ public abstract class AbstractPackage implements Serializable
 
 	public void setWeight(double weight) {
 		this.weight = weight;
+	}
+
+	public Date getProductPackageDate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getType() {
+		// TODO Auto-generated method stub
+		return type;
 	}
 }

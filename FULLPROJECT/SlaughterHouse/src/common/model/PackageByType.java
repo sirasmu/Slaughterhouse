@@ -19,6 +19,6 @@ public class PackageByType extends AbstractPackage implements Serializable
 
 	public String getType()
 	{
-		return type;
+		return this.type;
 	}
 }

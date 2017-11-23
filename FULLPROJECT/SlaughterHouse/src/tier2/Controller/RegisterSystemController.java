@@ -55,7 +55,7 @@ public class RegisterSystemController {
 				if(i==0) 
 				{
 					/*Find and existing tray type of part that is not filled completely*/
-					Tray temp1= traysHam.getAvailableTray(partsWeight.get(i), PartType.Ham);
+					Tray temp1= traysHam.getAvailableTray(partsWeight.get(i), PartType.HAM);
 					
 					/*Add the extra weight to the tray and the animal reference*/
 					temp1.addPartFromAnimal(animal, partsWeight.get(i));
@@ -63,7 +63,7 @@ public class RegisterSystemController {
 				}
 				else{
 					/*Find and existing tray with type of part that is not filled completely*/
-					Tray temp2= traysLeg.getAvailableTray(partsWeight.get(i), PartType.Leg);
+					Tray temp2= traysLeg.getAvailableTray(partsWeight.get(i), PartType.LEG);
 					
 					/*Add the extra weight to the tray and the animal reference*/
 					temp2.addPartFromAnimal(animal, partsWeight.get(i));

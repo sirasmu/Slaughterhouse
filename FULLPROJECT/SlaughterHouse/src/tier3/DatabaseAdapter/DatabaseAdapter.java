@@ -6,10 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import tier3.view.View;
-import common.model.Animal;
-import common.model.AnimalCollection;
-import common.model.PackageCollection;
-import common.model.TrayCollection;
+import common.model.*;
 
 public class DatabaseAdapter implements IDatabaseAdapter {
 
@@ -51,16 +48,51 @@ public class DatabaseAdapter implements IDatabaseAdapter {
 
 	}
 
-	@Override
-	public void saveTrays(TrayCollection trays) {
-		// TODO Auto-generated method stub
+public void saveTrays(TrayCollection trays) throws SQLException {
+	Connection conn = DatabaseConnection.requestConnection();
+		ArrayList<Tray> listTray = trays.getTrayCollection();
+		for (Tray tr : listTray) {
 
+			String query = "INSERT INTO Tray (" + " trayID,"
+					+ " typeOfParts ) VALUES ( ?, ?)";
+
+			// set all the preparedstatement parameters
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, tr.getId());
+			st.setString(2, tr.getType());
+			
+
+			// execute the preparedstatement insert
+			st.executeUpdate();
+			st.close();
+
+		}
+		DatabaseConnection.closeConnection();
 	}
 
 	@Override
-	public void savePackages(PackageCollection packages) {
-		// TODO Auto-generated method stub
+	public void savePackages(PackageCollection packages) throws SQLException {
+		Connection conn = DatabaseConnection.requestConnection();
+		ArrayList<AbstractPackage> listPackages = packages.getPackageCollection();
+		for (AbstractPackage pack : listPackages) {
 
+			String query = "INSERT INTO AbstractPackage (" + " productPackageID,"
+					+ " productPackageDate," + " productPackageType ) VALUES ( ?, ?, ?)";
+
+			// set all the preparedstatement parameters
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, pack.getId());
+			st.setDate(2, pack.getProductPackageDate());
+			st.setString(3, pack.getType());
+			
+			
+
+			// execute the preparedstatement insert
+			st.executeUpdate();
+			st.close();
+
+		}
+		DatabaseConnection.closeConnection();
 	}
 
 	@Override
