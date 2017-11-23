@@ -52,7 +52,8 @@ public class WebServiceManager
 
 	private String getMessageType(String message)
 	{
-		return message;	
+		String[] splitMessage = message.split(" ");
+		return splitMessage[0];	
 	}
 	
 	
