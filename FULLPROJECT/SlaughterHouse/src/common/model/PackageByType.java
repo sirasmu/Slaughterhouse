@@ -5,9 +5,9 @@ import java.io.Serializable;
 
 public class PackageByType extends AbstractPackage implements Serializable
 {
-	private PartType type;
+	private String type;
 	
-	public PackageByType(TrayCollection origins, PartType type)
+	public PackageByType(TrayCollection origins, String type)
 	{
 		super(origins);
 		this.type = type;
@@ -17,7 +17,7 @@ public class PackageByType extends AbstractPackage implements Serializable
 		}
 	}
 
-	public PartType getType()
+	public String getType()
 	{
 		return type;
 	}

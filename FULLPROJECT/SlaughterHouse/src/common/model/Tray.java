@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Tray implements Serializable
 {
 	private String id;
-	private PartType type;
+	private String type;
 	private final double maxWeight= 1000.0;
 	private double weight;
 	private AnimalCollection animals;
 	
-	public Tray(PartType type)
+	public Tray(String type)
 	{
 		this.id = SlaughterhouseUtilities.generateId();
 		this.type = type;
@@ -23,7 +23,7 @@ public class Tray implements Serializable
 		return id;
 	}
 	
-	public PartType getType()
+	public String getType()
 	{
 		return type;
 	}

@@ -2,7 +2,8 @@ package common.model;
 
 import java.io.Serializable;
 
-public enum PartType implements Serializable
+public interface PartType
 {
-	Leg, Ham
+	public static final String LEG = "LEG";
+	public static final String HAM = "HAM";
 }

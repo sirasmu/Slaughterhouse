@@ -17,7 +17,7 @@ public class TrayCollection implements Serializable
 		trays.add(tray);
 	}
 	
-	public boolean isAllTraysOfType(PartType type)
+	public boolean isAllTraysOfType(String type)
 	{
 		Iterator<Tray> iterator = trays.iterator();
 		
@@ -34,7 +34,7 @@ public class TrayCollection implements Serializable
 	/*
 	 * Gets the first available tray which still has not been filled completely
 	 */
-	public Tray getAvailableTray(double weight, PartType ptype){
+	public Tray getAvailableTray(double weight, String ptype){
 		for(Tray tr: trays){
 			if(tr.getWeight()+weight<tr.getMaxWeight()&&!tr.isReadyForPackaging()){
 				return tr;
