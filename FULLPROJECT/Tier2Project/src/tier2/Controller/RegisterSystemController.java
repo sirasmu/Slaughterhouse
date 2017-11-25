@@ -70,9 +70,8 @@ public class RegisterSystemController {
 					view.printLog("Animal part leg added to trayId " + temp2.getId()+ " weight "+partsWeight.get(i)+".");
 				}
 			}
-			
-			animal.setSplit(true);
 			//SAVE BACKUP TO LOCAL STORAGE
+			animal.setSplit(true);
 			modelController.saveAlltoLocalStorage(getCollectionOfAllData());
 	}
 	
@@ -141,7 +140,16 @@ public class RegisterSystemController {
 		return returnCollection;
 	}
 	
-	
+	public AnimalCollection getNotSplitAnimals()
+	{
+		AnimalCollection returnCollection= new AnimalCollection();
+		for(Animal an: animals.getAnimalCollection()){
+			if(!an.isSplit()){
+				returnCollection.add(an);
+			}
+		}
+		return returnCollection;
+	}
 	/*
 	 * SETTERS AND GETTERS REGION BENEATH
 	 */

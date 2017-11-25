@@ -10,6 +10,7 @@ public interface WebServiceConfig
 	public static final String ADD_PART_TO_TRAY = "ADD_PART_TO_TRAY";	
 //	TrayCollection getTraysForPacaking();
 	public static final String REQUEST_TRAYS_READY_FOR_PACKAGING = "REQUEST_TRAYS_READY_FOR_PACKAGING";	
+	public static final String RESPONSE_TRAYS_READY_FOR_PACKAGING = "RESPONSE_TRAYS_READY_FOR_PACKAGING";	
 //	void registerPackage(AbstractPackage pack);	
 	public static final String REGISTER_PACKAGE = "REGISTER_PACKAGE";	
 }

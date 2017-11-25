@@ -6,6 +6,9 @@
  */
 package tier2.webservice.skeleton;
 
+import tier2.webservice.ReadIncomingMessageResponse;
+import tier2.webservice.WebServiceManager;
+
 /**
  *  ISlaughterhouseWebServiceSkeleton java skeleton for the axisService
  */
@@ -17,10 +20,13 @@ public class ISlaughterhouseWebServiceSkeleton
      * @param readIncomingMessage0
      * @return readIncomingMessageResponse1
      */
-    public tier2.webservice.ReadIncomingMessageResponse readIncomingMessage(
-        tier2.webservice.ReadIncomingMessage readIncomingMessage0) {
-        //TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException("Please implement " +
-            this.getClass().getName() + "#readIncomingMessage");
+    public tier2.webservice.ReadIncomingMessageResponse readIncomingMessage(tier2.webservice.ReadIncomingMessage readIncomingMessage0) 
+    {
+    	System.out.println("Incoming Message!!!");
+    	System.out.println(readIncomingMessage0.getArgs0());	
+    	WebServiceManager manager = WebServiceManager.getInstance();	
+    	ReadIncomingMessageResponse response = new ReadIncomingMessageResponse();  	
+    	response.set_return( manager.readIncomingMessage(readIncomingMessage0.getArgs0()));
+        return response;
     }
 }
