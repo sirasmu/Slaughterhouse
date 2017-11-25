@@ -1,12 +1,15 @@
 package tier3.Controller;
 
+import java.lang.reflect.Array;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import org.omg.PortableServer.AdapterActivatorOperations;
 
 import tier3.DatabaseAdapter.DatabaseAdapter;
 import tier3.DatabaseAdapter.IDatabaseAdapter;
 import tier3.view.View;
+import common.model.AbstractPackage;
 import common.model.Animal;
 import common.model.AnimalCollection;
 import common.model.PackageCollection;
@@ -55,18 +58,8 @@ public class DataController
 		}
 	}
 	
-	public void saveBadPackages(PackageCollection packages)
-	{
-		view.printLog("Saving bad packages...");
-		try {
-			adapter.saveBadPackages(packages);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 	
-	public PackageCollection getBadPackages(Package p)
+	public ArrayList<String> getBadPackages(String p)
 	{
 		view.printLog("Retrieving other bad packages...");
 		try {

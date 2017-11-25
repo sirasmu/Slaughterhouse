@@ -20,4 +20,12 @@ public class AnimalCollection implements Serializable
 		return animals;
 	}
 	
+	public Animal findAnimalById(String id){
+		for(Animal an: animals){
+			if (an.getAnimalId().equals(id))
+				return an;
+		}
+		return null;
+	}
+	
 }

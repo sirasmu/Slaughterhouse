@@ -2,10 +2,10 @@ package tier3.RMIAdaptor;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
+
 import common.ISlaughterhouseDataRemote;
-import common.model.AnimalCollection;
-import common.model.PackageCollection;
-import common.model.TrayCollection;
+import common.model.*;
 import tier3.Controller.*;
 
 public class SlaughterhouseDataRemote extends UnicastRemoteObject implements ISlaughterhouseDataRemote
@@ -33,13 +33,10 @@ public class SlaughterhouseDataRemote extends UnicastRemoteObject implements ISl
 		controller.savePackages(packages);
 	}
 	
-	public void saveBadPackages(PackageCollection packages) throws RemoteException 
-	{
-		controller.saveBadPackages(packages);
-	}
-	
-	public PackageCollection getBadPackages(Package p) throws RemoteException 
+	public ArrayList<String> getBadPackages(String p) throws RemoteException 
 	{
 		return controller.getBadPackages(p);
 	}
+
+
 }

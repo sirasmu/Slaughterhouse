@@ -2,6 +2,7 @@ package tier3.DatabaseAdapter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -76,7 +77,7 @@ public void saveTrays(TrayCollection trays) throws SQLException {
 		ArrayList<AbstractPackage> listPackages = packages.getPackageCollection();
 		for (AbstractPackage pack : listPackages) {
 
-			String query = "INSERT INTO AbstractPackage (" + " productPackageID,"
+			String query = "INSERT INTO PRODUCTPACKAGE (" + " productPackageID,"
 					+ " productPackageDate," + " productPackageType ) VALUES ( ?, ?, ?)";
 
 			// set all the preparedstatement parameters
@@ -95,16 +96,53 @@ public void saveTrays(TrayCollection trays) throws SQLException {
 		DatabaseConnection.closeConnection();
 	}
 
-	@Override
-	public void saveBadPackages(PackageCollection packages) {
-		// TODO Auto-generated method stub
 
-	}
+public ArrayList<String> getBadPackages(String stringPackageId) throws SQLException{
+		
+		Connection conn= DatabaseConnection.requestConnection();
 
-	@Override
-	public PackageCollection getBadPackages(Package p) {
-		// TODO Auto-generated method stub
-		return null;
+			String query = "select tp.productpackageID,tp.TRAYID,ta.AnimalID"
+					+" from  TRAYANIMAL ta"
+					+" inner join TRAYPRODUCTPACKAGE tp"
+					+" on ta.TRAYID=tp.TRAYID"
+					+" where tp.PRODUCTPACKAGEID= ?"
+					+" order by tp.PRODUCTPACKAGEID";
+			
+			String query2 = "select ta.AnimalID,tp.TRAYID,tp.productpackageID"
+					+" from  TRAYANIMAL ta"
+					+" inner join TRAYPRODUCTPACKAGE tp"
+                    +" on ta.TRAYID=tp.TRAYID"
+                    +" where ta.ANIMALID= ? "
+                    +" order by tp.PRODUCTPACKAGEID";
+
+			// set all the preparedstatement parameters
+			PreparedStatement st = conn.prepareStatement(query);
+			PreparedStatement st1 = conn.prepareStatement(query2);
+			st.setString(1, stringPackageId);
+			
+			
+			ResultSet animalIdSet= st.executeQuery();
+			ResultSet badPackageSetRez=null; 
+			
+		 while(animalIdSet.next()){
+			    st1.setString(1, animalIdSet.getString("AnimalID"));
+			    badPackageSetRez = st1.executeQuery();
+		 }
+
+		 ArrayList<String> allBadPackageId = new ArrayList<String>();
+		 
+		 //execute any caption from the result set 
+		 while (badPackageSetRez.next()){
+			 allBadPackageId.add(badPackageSetRez.getString("PRODUCTPACKAGEID"));
+		 }
+		 
+		 
+		 ///closing all elements
+		 	animalIdSet.close();
+		 	badPackageSetRez.close();
+			st.close();
+			st1.close();
+			return allBadPackageId;	
 	}
 
 }

@@ -116,6 +116,29 @@ public class RegisterSystemController {
 		}
 	}
 	
+	public TrayCollection getHamTraysReadyForPackaging(){
+		ArrayList<Tray> all= traysHam.getTrayCollection();
+		TrayCollection returnCollection= new TrayCollection();
+		for(Tray tr: all){
+			if(tr.isReadyForPackaging()){
+				returnCollection.add(tr);
+			}
+		}
+		return returnCollection;
+	}
+	
+	
+	public TrayCollection getLegTraysReadyForPackaging(){
+		ArrayList<Tray> all= traysLeg.getTrayCollection();
+		TrayCollection returnCollection= new TrayCollection();
+		for(Tray tr: all){
+			if(tr.isReadyForPackaging()){
+				returnCollection.add(tr);
+			}
+		}
+		return returnCollection;
+	}
+	
 	
 	/*
 	 * SETTERS AND GETTERS REGION BENEATH
