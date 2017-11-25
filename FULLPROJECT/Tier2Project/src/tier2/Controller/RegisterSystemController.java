@@ -70,6 +70,8 @@ public class RegisterSystemController {
 					view.printLog("Animal part leg added to trayId " + temp2.getId()+ " weight "+partsWeight.get(i)+".");
 				}
 			}
+			
+			animal.setSplit(true);
 			//SAVE BACKUP TO LOCAL STORAGE
 			modelController.saveAlltoLocalStorage(getCollectionOfAllData());
 	}

@@ -23,6 +23,8 @@ public class T3RMIServer
 			Naming.rebind(Config.TIER_3_SERVICE, remote);
 
 			System.out.println("Tier 3 server listening on " + InetAddress.getLocalHost().getHostAddress());
+			
+			
 		} catch (Exception ex)
 		{
 			ex.printStackTrace();

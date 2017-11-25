@@ -35,6 +35,7 @@ public class SlaughterhouseDataRemote extends UnicastRemoteObject implements ISl
 	
 	public ArrayList<String> getBadPackages(String p) throws RemoteException 
 	{
+		System.out.println("REQUEST TO GET BAD PACKAGES");
 		return controller.getBadPackages(p);
 	}
 
