@@ -119,7 +119,7 @@ public class TestDatabase {
 		
 		///RETURN BAD PACKAGES
 		
-		String id= "";
+		String id= "770baf9a-c20c-4832-9cb1-7a9385c7b78b";
 		ArrayList<String> badPackageCollection=null; 
 		
 		try {
@@ -128,11 +128,18 @@ public class TestDatabase {
 			System.out.println("BROKEN AT ADD getBadPackage");
 			e.printStackTrace();
 		}
+		catch( Exception e1){
+			System.out.println("NO PACKAGES RETRIEVED");
+		}
 		System.out.println("List of bad packages is:");
+		try{
 		for(String el: badPackageCollection){
 			System.out.println(el);
 		}
-		
+		}
+		catch(Exception e){
+			System.out.println("Nothing to show");
+		}
 	}
 
 }

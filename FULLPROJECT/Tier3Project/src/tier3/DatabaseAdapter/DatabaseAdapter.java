@@ -49,52 +49,79 @@ public class DatabaseAdapter implements IDatabaseAdapter {
 
 	}
 
-public void saveTrays(TrayCollection trays) throws SQLException {
-	Connection conn = DatabaseConnection.requestConnection();
-		ArrayList<Tray> listTray = trays.getTrayCollection();
-		for (Tray tr : listTray) {
-
+	public void saveTrays(TrayCollection trays) throws SQLException {
+		Connection conn = DatabaseConnection.requestConnection();
+			ArrayList<Tray> listTray = trays.getTrayCollection();
+			
+			
 			String query = "INSERT INTO Tray (" + " trayID,"
 					+ " typeOfParts ) VALUES ( ?, ?)";
-
-			// set all the preparedstatement parameters
-			PreparedStatement st = conn.prepareStatement(query);
-			st.setString(1, tr.getId());
-			st.setString(2, tr.getType());
 			
+			String query2= "INSERT INTO TrayAnimal (" + " trayID,"
+					+ " animalID ) VALUES ( ?, ?)";
+			
+			for (Tray tr : listTray) {
+				
+				// set all the preparedstatement parameters
+				PreparedStatement st = conn.prepareStatement(query);
+				PreparedStatement st1 = conn.prepareStatement(query2);
+				st.setString(1, tr.getId());
+				st.setString(2, tr.getType());
+				st.executeUpdate();
+				
+				for (Animal an: tr.getAnimals().getAnimalCollection()){
+					st1.setString(1,  tr.getId());
+					st1.setString(2, an.getAnimalId());
+					st1.executeUpdate();
+					}
 
-			// execute the preparedstatement insert
-			st.executeUpdate();
-			st.close();
+				// execute the preparedstatement insert
 
+				st.close();
+				st1.close();
+
+			}
+			DatabaseConnection.closeConnection();
 		}
-		DatabaseConnection.closeConnection();
-	}
 
-	@Override
-	public void savePackages(PackageCollection packages) throws SQLException {
-		Connection conn = DatabaseConnection.requestConnection();
-		ArrayList<AbstractPackage> listPackages = packages.getPackageCollection();
-		for (AbstractPackage pack : listPackages) {
-
+		@Override
+		public void savePackages(PackageCollection packages) throws SQLException {
+			Connection conn = DatabaseConnection.requestConnection();
+			ArrayList<AbstractPackage> listPackages = packages.getPackageCollection();
+			
 			String query = "INSERT INTO PRODUCTPACKAGE (" + " productPackageID,"
 					+ " productPackageDate," + " productPackageType ) VALUES ( ?, ?, ?)";
-
-			// set all the preparedstatement parameters
-			PreparedStatement st = conn.prepareStatement(query);
-			st.setString(1, pack.getId());
-			st.setDate(2, pack.getProductPackageDate());
-			st.setString(3, pack.getType());
 			
+			String query2= "INSERT INTO TRAYPRODUCTPACKAGE (" + " trayID,"
+					+ " productpackageId ) VALUES ( ?, ?)";
 			
+			for (AbstractPackage pack : listPackages) {
 
-			// execute the preparedstatement insert
-			st.executeUpdate();
-			st.close();
+				
+				// set all the preparedstatement parameters
+				PreparedStatement st = conn.prepareStatement(query);
+				PreparedStatement st1 = conn.prepareStatement(query2);
+				
+				st.setString(1, pack.getId());
+				st.setDate(2, pack.getProductPackageDate());
+				st.setString(3, pack.getType());
+				st.executeUpdate();
+				
+				for (Tray tr: pack.getTrays().getTrayCollection()){
+					st1.setString(1, tr.getId());
+					st1.setString(2, pack.getId());
+					st1.executeUpdate();
+					}
+				
 
+				// execute the preparedstatement insert
+				
+				st.close();
+	            st1.close();
+			}
+			DatabaseConnection.closeConnection();
 		}
-		DatabaseConnection.closeConnection();
-	}
+
 
 
 public ArrayList<String> getBadPackages(String stringPackageId) throws SQLException{
