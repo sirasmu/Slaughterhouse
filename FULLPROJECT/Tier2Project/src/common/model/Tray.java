@@ -9,6 +9,7 @@ public class Tray implements Serializable
 	private final double maxWeight= 1000.0;
 	private double weight;
 	private AnimalCollection animals;
+	private boolean readyForPacking;
 	
 	public Tray(String type)
 	{
@@ -16,6 +17,7 @@ public class Tray implements Serializable
 		this.type = type;
 		this.weight = 0;
 		this.animals = new AnimalCollection();
+		this.readyForPacking=false;
 	}
 	
 	public String getId()
@@ -51,11 +53,15 @@ public class Tray implements Serializable
 		animals.add(animal);
 		}
 		this.weight+=weight;
+		if(this.weight>maxWeight||this.weight>maxWeight-50)
+		{
+			readyForPacking=true;
+		}
 	}
 	
 	public boolean isReadyForPackaging()
 	{
-		return weight >= maxWeight - 50.0;	
+		return readyForPacking;	
 	}
 	
 }

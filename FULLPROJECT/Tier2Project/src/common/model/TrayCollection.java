@@ -36,7 +36,7 @@ public class TrayCollection implements Serializable
 	 */
 	public Tray getAvailableTray(double weight, String ptype){
 		for(Tray tr: trays){
-			if(tr.getWeight()+weight<tr.getMaxWeight()&&!tr.isReadyForPackaging()){
+			if(!tr.isReadyForPackaging()){
 				return tr;
 			}
 		}

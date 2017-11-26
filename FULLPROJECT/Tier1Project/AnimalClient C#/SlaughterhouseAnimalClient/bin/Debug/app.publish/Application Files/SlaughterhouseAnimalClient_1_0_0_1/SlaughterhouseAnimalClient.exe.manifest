@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="SlaughterhouseAnimalClient.exe" version="1.0.0.1" publicKeyToken="f68fec333dae4cef" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="SlaughterhouseAnimalClient" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="SlaughterhouseAnimalClient.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SlaughterhouseAnimalClient.exe" size="15296">
+      <assemblyIdentity name="SlaughterhouseAnimalClient" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>l9fFPozrhsrVqNfpeDSCNA3SKBjcKQZME2aKwJsl8z4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="SlaughterhouseAnimalClient.exe.config" size="1141">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>w81o5gbiTxO5Cwc4q560wmMvuv+6P6NX2/oSLlrBEQ8=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=RALEX\Alexandru" issuerKeyHash="968d071e17f81f1b1ba17ac6a2fcc6b91d01464b" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>6l9ZL8Q2POGeOcOafctsv+aKxnt4msmvaxtalIGUDtk=</DigestValue></Reference></SignedInfo><SignatureValue>kGFeXALm+GTnKTPx3hS3IVXAcTsdSdpHwAhrZR01rmuKzvJ30M9NVmmVBg9nh7Kk4SCDWoPOAi/xS5NY5+m8U3HyNSTVdHaAacM/Of7zSmhobdvq1qdA/i3b7bURZf9CjvlwXSkr0mxRwKOp5KHClhJo6V2PEXHxNB6xIYtasLk=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>onIwhn/1W43ZqAlnJkTZsMATbC8yRU9JGXd4VRZqx4PVdusLi/oAXfpVcKyzPpt6/kyA0l+B3rrIuqyeqwkdIERryxKlosoBB41EZq12OsGuQBXPFZA1O7e76K+rEYBJDPwjlc2YRd017PBrmjNNmDdQBlsYzSmnnGnYAW9/lUs=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="d90e9481945a1b6bafc99a787bc68ae6bf6ccb7d9ac3399ee13c36c42f595fea" Description="" Url=""><as:assemblyIdentity name="SlaughterhouseAnimalClient.exe" version="1.0.0.1" publicKeyToken="f68fec333dae4cef" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=RALEX\Alexandru</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>K8kYX00v8nPZM/EOLyZk3KLe2YIVGaIk/KjP7aCGeos=</DigestValue></Reference></SignedInfo><SignatureValue>Sp0dN/CPqRf3/slNODQPrWlxRvC1UlNI8SzZfynHGDuBU9JeW25Y3Do8CxRd2z3pelDGaJqNgIgFOCVzGjAb+LhSH4tLSvMXlncU3yEvWwdwQeM51i3fOhqkhdGRcQWoKh2e2L0wvSBzzxm7OItGvmAvqDe8z60Vz+wNRp4v9JA=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>onIwhn/1W43ZqAlnJkTZsMATbC8yRU9JGXd4VRZqx4PVdusLi/oAXfpVcKyzPpt6/kyA0l+B3rrIuqyeqwkdIERryxKlosoBB41EZq12OsGuQBXPFZA1O7e76K+rEYBJDPwjlc2YRd017PBrmjNNmDdQBlsYzSmnnGnYAW9/lUs=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB1TCCAT6gAwIBAgIQG7mRk5mVXbJKkU4ODX6xyTANBgkqhkiG9w0BAQsFADApMScwJQYDVQQDHh4AUgBBAEwARQBYAFwAQQBsAGUAeABhAG4AZAByAHUwHhcNMTcxMTI2MjE0NTM4WhcNMTgxMTI3MDM0NTM4WjApMScwJQYDVQQDHh4AUgBBAEwARQBYAFwAQQBsAGUAeABhAG4AZAByAHUwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAKJyMIZ/9VuN2agJZyZE2bDAE2wvMkVPSRl3eFUWaseD1XbrC4v6AF36VXCssz6bev5MgNJfgd66yLqsnqsJHSBEa8sSpaLKAQeNRGatdjrBrkAVzxWQNTu3u+ivqxGASQz8I5XNmEXdNezwa5ozTZg3UAZbGM0pp5xp2AFvf5VLAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAoAectQOtQNopQjKrxuX9eOIeAza3Lehb8srDfphL0kpmADqyWnn6rbc/fM8p/Lmq1thCgIH+lfhjNeUw108jJjVaYPL4H4v2qH4F0q+HAVNySPYiiL0L+LImqcGaFWYIs+CoM3Svj17855K2FnyDsvesQ27B0srMBJJxoY8lXDU=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
