@@ -42,6 +42,7 @@ namespace SlaughterhouseAnimalClient
       {
          try
          {
+            checkedListBox1.Items.Clear();
             string msg =  webService.readIncomingMessage( "REQUEST_TRAYS_READY_FOR_PACKAGING LEG" );
             string[] split = msg.Split(':');
             string[] traysIds = split[1].Split(',');
@@ -61,6 +62,7 @@ namespace SlaughterhouseAnimalClient
       {
          try
          {
+            checkedListBox1.Items.Clear();
             string msg =  webService.readIncomingMessage( "REQUEST_TRAYS_READY_FOR_PACKAGING HAM" );
             string[] split = msg.Split(':');
             string[] traysIds = split[1].Split(',');
