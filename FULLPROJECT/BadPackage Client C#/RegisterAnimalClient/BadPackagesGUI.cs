@@ -22,12 +22,19 @@ namespace RegisterAnimalClient
         {
             resultlist.Items.Clear();
             IWebServiceBadPackage webService = new IWebServiceBadPackage();
-            string response =  webService.getBadPackages(idtextbox.Text);
-            string[] allPackages = response.Split(':');
-            foreach (string el in allPackages)
-            {
-                resultlist.Items.Add(el);
+            try { 
+            string response = webService.getBadPackages(idtextbox.Text);
+                string[] allPackages = response.Split(':');
+                foreach (string el in allPackages)
+                {
+                    resultlist.Items.Add(el);
+                }
             }
+        catch (Exception){
+                resultlist.Items.Clear();
+                resultlist.Items.Add("Connection to server refused. Try again later.");
+            }
+            
         }
     }
 }
