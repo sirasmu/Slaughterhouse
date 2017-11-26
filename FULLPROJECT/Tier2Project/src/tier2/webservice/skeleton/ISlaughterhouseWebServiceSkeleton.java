@@ -21,9 +21,7 @@ public class ISlaughterhouseWebServiceSkeleton
      * @return readIncomingMessageResponse1
      */
     public tier2.webservice.ReadIncomingMessageResponse readIncomingMessage(tier2.webservice.ReadIncomingMessage readIncomingMessage0) 
-    {
-    	System.out.println("Incoming Message!!!");
-    	System.out.println(readIncomingMessage0.getArgs0());	
+    {	
     	WebServiceManager manager = WebServiceManager.getInstance();	
     	ReadIncomingMessageResponse response = new ReadIncomingMessageResponse();  	
     	response.set_return( manager.readIncomingMessage(readIncomingMessage0.getArgs0()));

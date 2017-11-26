@@ -50,4 +50,12 @@ public class TrayCollection implements Serializable
 		return trays;
 	}
 	
+	public Tray findTrayById(String id){
+		for(Tray tr: trays){
+			if (tr.getId().equals(id))
+				return tr;
+		}
+		return null;
+	}
+	
 }

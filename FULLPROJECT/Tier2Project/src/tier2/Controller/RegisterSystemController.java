@@ -139,6 +139,20 @@ public class RegisterSystemController {
 		}
 		return returnCollection;
 	}
+
+	public TrayCollection getAllTraysReadyForPackaging()
+	{
+		TrayCollection readyTrays = new TrayCollection();
+		ArrayList<Tray> traysLeg = getLegTraysReadyForPackaging().getTrayCollection();
+		ArrayList<Tray> traysHam = getHamTraysReadyForPackaging().getTrayCollection();
+		for(Tray tr: traysLeg){
+			readyTrays.add(tr);
+		}
+		for(Tray tr: traysHam){
+			readyTrays.add(tr);
+		}
+		return readyTrays;
+	}
 	
 	public AnimalCollection getNotSplitAnimals()
 	{
@@ -198,6 +212,11 @@ public class RegisterSystemController {
 
 	public void setPackages(PackageCollection packages) {
 		this.packages = packages;
+	}
+	
+	public View getView()
+	{
+		return view;
 	}
 	
 	
