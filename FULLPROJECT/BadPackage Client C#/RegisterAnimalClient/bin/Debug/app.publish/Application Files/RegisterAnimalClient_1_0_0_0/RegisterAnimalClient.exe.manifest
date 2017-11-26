@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="RegisterAnimalClient.exe" version="1.0.0.0" publicKeyToken="4b8fc02f26d53c3f" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="RegisterAnimalClient" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="RegisterAnimalClient.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RegisterAnimalClient.exe" size="17344">
+      <assemblyIdentity name="RegisterAnimalClient" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>1YkTstBC64RhO0fDZ0IO/A0+KLopF7B/z1Z5YoZvtwg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="RegisterAnimalClient.exe.config" size="1389">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>wsWnswjPfN9UInXeE6fTfRGvwzZXq+FBJyJEnMzlcMk=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=RALEX\Alexandru" issuerKeyHash="e0acd60c8eed775b85c94a47398105187cb16699" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>S1QgNYHuyjEPNOHiK2wnkPDaK+nk9rbjXIFIp3zYRNc=</DigestValue></Reference></SignedInfo><SignatureValue>LF1N/zi93NmWAUD5HAl4H9oFcGkA83t4z8dZC++MrYH0qNt426MqLRYmOTOxty0YJHr3iFcVN05tMFYTilGiDfZgRHH9qqeJ3P0asAOAXlfDReN9qUBJvzMuqezB/Amn5Fuh5RghTRW74BPw7QqJXY+8+V7M57sEoBFikTYnFfo=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>sRIqZVIIbsWnSgvGQNGbdzrxHFZK33AxO8fvl1mNu1nq/A0dNkEnTjtIVHb+loIzYzyLjklSqtgrxHxKzfar7mwq2+OXDsJPuk+2VOMFICUay2l43Io1pur1I+EWnppjVoX/o9lV3O0kMVVV+9REQRRcHYiM03N0g/B2cjauvuE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="d744d87ca748815ce3b6f6e4e92bdaf090276c2be2e1340f31caee813520544b" Description="" Url=""><as:assemblyIdentity name="RegisterAnimalClient.exe" version="1.0.0.0" publicKeyToken="4b8fc02f26d53c3f" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=RALEX\Alexandru</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>yczFmg+qfGWnMBVFnwVNsrMNjZn8HP6bsXorUq4Wlp8=</DigestValue></Reference></SignedInfo><SignatureValue>Gj6u4LtVKEuklYflxHQwjMw2hERk/7WyiKxouYLB7Vz93YPVtOvotdtewxa04Elq0SCqnGUo/2Van/uQZKjMH9f8NzyT+vOLzQDAhXB5M2CLJcL5Hyw6DnoiRrwJ+WfisH5Oo1rBT0yMrGzJzcvcWJDzavnrerpi2jA1+872c5s=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>sRIqZVIIbsWnSgvGQNGbdzrxHFZK33AxO8fvl1mNu1nq/A0dNkEnTjtIVHb+loIzYzyLjklSqtgrxHxKzfar7mwq2+OXDsJPuk+2VOMFICUay2l43Io1pur1I+EWnppjVoX/o9lV3O0kMVVV+9REQRRcHYiM03N0g/B2cjauvuE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB1TCCAT6gAwIBAgIQHNxAbSuf/51NBQ6V9TvxSjANBgkqhkiG9w0BAQsFADApMScwJQYDVQQDHh4AUgBBAEwARQBYAFwAQQBsAGUAeABhAG4AZAByAHUwHhcNMTcxMTI2MTczOTA3WhcNMTgxMTI2MjMzOTA3WjApMScwJQYDVQQDHh4AUgBBAEwARQBYAFwAQQBsAGUAeABhAG4AZAByAHUwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALESKmVSCG7Fp0oLxkDRm3c68RxWSt9wMTvH75dZjbtZ6vwNHTZBJ047SFR2/paCM2M8i45JUqrYK8R8Ss32q+5sKtvjlw7CT7pPtlTjBSAlGstpeNyKNabq9SPhFp6aY1aF/6PZVdztJDFVVfvUREEUXB2IjNNzdIPwdnI2rr7hAgMBAAEwDQYJKoZIhvcNAQELBQADgYEANgY9S49giCsyBaoRdvixevDtw8i82JmXy2+WQWd7GaXP1thom5PSpZfm599dYMPQ6gg7PvmHjEQFnIRsATjlOOUQA3og6XtwZ6PaVt5u9LLTLDdy10hgTMq6PxndtEGUhblKZVnIi5wUl1Ru5TgDXMSl7HKRJuL2kBfH8UAs1ng=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

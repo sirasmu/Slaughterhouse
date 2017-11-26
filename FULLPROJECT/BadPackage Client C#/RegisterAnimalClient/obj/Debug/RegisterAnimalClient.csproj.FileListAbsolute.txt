@@ -8,3 +8,17 @@ C:\Users\Alexandru\source\repos\RegisterAnimalClient\RegisterAnimalClient\obj\De
 C:\Users\Alexandru\source\repos\RegisterAnimalClient\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.exe
 C:\Users\Alexandru\source\repos\RegisterAnimalClient\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.pdb
 C:\Users\Alexandru\source\repos\RegisterAnimalClient\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.BadPackagesGUI.resources
+C:\SCHOOL\SDJ3\Assignment\ProjectFiles\Slaughterhouse\FULLPROJECT\FULLPROJECT\BadPackage Client C#\RegisterAnimalClient\bin\Debug\RegisterAnimalClient.exe.config
+C:\SCHOOL\SDJ3\Assignment\ProjectFiles\Slaughterhouse\FULLPROJECT\FULLPROJECT\BadPackage Client C#\RegisterAnimalClient\bin\Debug\RegisterAnimalClient.exe.manifest
+C:\SCHOOL\SDJ3\Assignment\ProjectFiles\Slaughterhouse\FULLPROJECT\FULLPROJECT\BadPackage Client C#\RegisterAnimalClient\bin\Debug\RegisterAnimalClient.application
+C:\SCHOOL\SDJ3\Assignment\ProjectFiles\Slaughterhouse\FULLPROJECT\FULLPROJECT\BadPackage Client C#\RegisterAnimalClient\bin\Debug\RegisterAnimalClient.exe
+C:\SCHOOL\SDJ3\Assignment\ProjectFiles\Slaughterhouse\FULLPROJECT\FULLPROJECT\BadPackage Client C#\RegisterAnimalClient\bin\Debug\RegisterAnimalClient.pdb
+C:\SCHOOL\SDJ3\Assignment\ProjectFiles\Slaughterhouse\FULLPROJECT\FULLPROJECT\BadPackage Client C#\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.csprojResolveAssemblyReference.cache
+C:\SCHOOL\SDJ3\Assignment\ProjectFiles\Slaughterhouse\FULLPROJECT\FULLPROJECT\BadPackage Client C#\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.BadPackagesGUI.resources
+C:\SCHOOL\SDJ3\Assignment\ProjectFiles\Slaughterhouse\FULLPROJECT\FULLPROJECT\BadPackage Client C#\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.Properties.Resources.resources
+C:\SCHOOL\SDJ3\Assignment\ProjectFiles\Slaughterhouse\FULLPROJECT\FULLPROJECT\BadPackage Client C#\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.csproj.GenerateResource.Cache
+C:\SCHOOL\SDJ3\Assignment\ProjectFiles\Slaughterhouse\FULLPROJECT\FULLPROJECT\BadPackage Client C#\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.csproj.CoreCompileInputs.cache
+C:\SCHOOL\SDJ3\Assignment\ProjectFiles\Slaughterhouse\FULLPROJECT\FULLPROJECT\BadPackage Client C#\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.exe.manifest
+C:\SCHOOL\SDJ3\Assignment\ProjectFiles\Slaughterhouse\FULLPROJECT\FULLPROJECT\BadPackage Client C#\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.application
+C:\SCHOOL\SDJ3\Assignment\ProjectFiles\Slaughterhouse\FULLPROJECT\FULLPROJECT\BadPackage Client C#\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.exe
+C:\SCHOOL\SDJ3\Assignment\ProjectFiles\Slaughterhouse\FULLPROJECT\FULLPROJECT\BadPackage Client C#\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.pdb
