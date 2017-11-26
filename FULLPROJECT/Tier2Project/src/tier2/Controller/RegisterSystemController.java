@@ -1,12 +1,14 @@
 package tier2.Controller;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import common.ISlaughterhouseDataRemote;
 import common.model.*;
 import tier2.view.View;
+import tier2.TriggerCounter.*;
 
 
 public class RegisterSystemController {
@@ -18,6 +20,7 @@ public class RegisterSystemController {
 	private TrayCollection traysLeg;
 	private PackageCollection packages;
 	private ISlaughterhouseDataRemote databaseRemote;
+	private Trigger trigger;
 	
 	public RegisterSystemController(ISlaughterhouseDataRemote databaseRemote){
 		this.view = new View();
@@ -27,6 +30,7 @@ public class RegisterSystemController {
 		this.traysLeg= new TrayCollection();
 		this.packages= new PackageCollection();
 		this.databaseRemote = databaseRemote;
+		this.trigger= Trigger.getInstance();
 	}
 	
 	/*
@@ -77,7 +81,7 @@ public class RegisterSystemController {
 	
 	
 	/*
-	 * Register a new animal
+	 * Register a new animal and trigger save to database if counter reaches 3
 	 */
 	public void registerAnimal(Animal animal){
 		animals.add(animal);
@@ -85,6 +89,20 @@ public class RegisterSystemController {
 		
 		//SAVE BACKUP TO LOCAL STORAGE
 		modelController.saveAlltoLocalStorage(getCollectionOfAllData());
+		
+		//Count to trigger save on tier3 database
+		if(trigger.getCount()>3){
+			
+			try {
+				modelController.saveAllToT3Server(this, databaseRemote);
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				view.printLog("Error saving all to database");
+			}
+		}
+		else 
+			trigger.addCount();
+		
 	}
 	
 	/*

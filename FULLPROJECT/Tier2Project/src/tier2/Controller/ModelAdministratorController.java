@@ -2,6 +2,7 @@ package tier2.Controller;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.rmi.RemoteException;
 import java.util.HashMap;
 
 import common.ISlaughterhouseDataRemote;
@@ -63,7 +64,7 @@ public class ModelAdministratorController {
 	 * triggered by system administrator if needed
 	 */
 	public void fetchAllFromT3Server(ISlaughterhouseDataRemote dataRemote) {
-
+		//to be implemented in a future feature update
 	}
 	
 	
@@ -71,8 +72,12 @@ public class ModelAdministratorController {
 	/*
 	 * METHOD to save all available data on T3Server Database
 	 */
-	public void saveAllToT3Server(ISlaughterhouseDataRemote dataRemote) {
-
+	public static void saveAllToT3Server(RegisterSystemController controller,
+			ISlaughterhouseDataRemote dataRemote) throws RemoteException 
+	{
+		dataRemote.saveAnimals(controller.getAnimals());
+		dataRemote.saveTrays(controller.getAllTraysReadyForPackaging());
+		dataRemote.savePackages(controller.getPackages());
 	}
 
 

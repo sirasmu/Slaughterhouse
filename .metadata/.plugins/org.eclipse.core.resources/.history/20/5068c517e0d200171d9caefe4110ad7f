@@ -1,0 +1,22 @@
+package tier2.TriggerCounter;
+
+public class Trigger {
+
+	private static Trigger instance = null;
+	private static int count;
+	   protected Trigger() {
+	      // Exists only to defeat instantiation.
+	   }
+	   public static Trigger getInstance() {
+	      if(instance == null) {
+	         instance = new Trigger();
+	         this.count=0;
+	      }
+	      return instance;
+	   }
+	   
+	   public addCount(){
+		   
+	   }
+	
+}
