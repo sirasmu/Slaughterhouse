@@ -63,11 +63,16 @@ public class DataController
 	{
 		view.printLog("Retrieving other bad packages...");
 		try {
-			return adapter.getBadPackages(p);
+			ArrayList<String> resultSet= adapter.getBadPackages(p);
+			return resultSet;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return null;
 		}
-		return null;
+		catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}
 	}	
 }

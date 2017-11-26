@@ -1,0 +1,43 @@
+package tier2.Controller;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import common.ISlaughterhouseDataRemote;
+import common.model.*;
+import tier2.view.View;
+
+
+public class RegisterSystemController {
+
+	private View view;	
+	private ISlaughterhouseDataRemote databaseRemote;
+	
+	public RegisterSystemController(ISlaughterhouseDataRemote databaseRemote){
+		this.view = new View();
+		this.databaseRemote= databaseRemote;
+	}
+	
+	/*
+	 * Constructor without connection to the tier 3 
+	 */
+	public RegisterSystemController(){
+		this.view = new View();
+	}
+
+	
+	public ArrayList<String> getAllBadPackages(String id){
+		
+		try {
+			return databaseRemote.getBadPackages(id);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+}

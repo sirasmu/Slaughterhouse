@@ -1,0 +1,10 @@
+package webservice;
+
+public class BadPackageFunctionality {
+
+	
+	public static String getBadPackages(String pk){
+		return "test";
+	}
+	
+}

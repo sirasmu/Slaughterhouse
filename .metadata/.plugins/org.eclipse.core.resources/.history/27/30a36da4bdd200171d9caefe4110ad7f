@@ -1,0 +1,75 @@
+package tier3.Controller;
+
+import java.lang.reflect.Array;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import org.omg.PortableServer.AdapterActivatorOperations;
+
+import tier3.DatabaseAdapter.DatabaseAdapter;
+import tier3.DatabaseAdapter.IDatabaseAdapter;
+import tier3.view.View;
+import common.model.AbstractPackage;
+import common.model.Animal;
+import common.model.AnimalCollection;
+import common.model.PackageCollection;
+import common.model.TrayCollection;
+public class DataController
+{
+	private IDatabaseAdapter adapter;
+	private View view;
+	
+	public DataController ()
+	{
+		adapter = new DatabaseAdapter();
+		view = new View();
+	}
+	
+	public void saveAnimals(AnimalCollection animals)
+	{
+		view.printLog("Saving animals...");
+		try {
+			adapter.saveAnimals(animals);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void saveTrays(TrayCollection trays)
+	{
+		view.printLog("Saving trays...");
+		try {
+			adapter.saveTrays(trays);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void savePackages(PackageCollection packages)
+	{
+		view.printLog("Saving packages...");
+		try {
+			adapter.savePackages(packages);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public ArrayList<String> getBadPackages(String p)
+	{
+		view.printLog("Retrieving other bad packages...");
+		try {
+			ArrayList<String> resultSet= adapter.getBadPackages(p);
+			view.printLog("Result of query: "+allBadPackageId);
+			return 
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}	
+}

@@ -1,0 +1,34 @@
+/**
+ * IWebServiceBadPackageSkeleton.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis2 version: 1.7.6  Built on : Jul 30, 2017 (09:08:31 BST)
+ */
+package webservice.skeleton;
+import webservice.*;
+
+/**
+ *  IWebServiceBadPackageSkeleton java skeleton for the axisService
+ */
+public class IWebServiceBadPackageSkeleton
+    implements IWebServiceBadPackageSkeletonInterface {
+    /**
+     * Auto generated method signature
+     *
+     * @param getBadPackages0
+     * @return getBadPackagesResponse1
+     */
+    public webservice.GetBadPackagesResponse getBadPackages(
+        webservice.GetBadPackages getBadPackages0) {
+        //TODO : fill this with the necessary business logic
+    	
+    	GetBadPackagesResponse res = new GetBadPackagesResponse();
+    	
+    	BadPackageFunctionality badPackageProcess = new BadPackageFunctionality();
+    	res.set_return(badPackageProcess.getBadPackages());
+    	return res;
+    	
+//        throw new java.lang.UnsupportedOperationException("Please implement " +
+//            this.getClass().getName() + "#getBadPackages");
+    }
+}

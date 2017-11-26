@@ -157,12 +157,17 @@ public ArrayList<String> getBadPackages(String stringPackageId) throws SQLExcept
 		 }
 
 		 ArrayList<String> allBadPackageId = new ArrayList<String>();
-		 
 		 //execute any caption from the result set 
+		 try{
 		 while (badPackageSetRez.next()){
 			 allBadPackageId.add(badPackageSetRez.getString("PRODUCTPACKAGEID"));
 		 }
+		 }
+		 catch(Exception e){
+			 view.printLog("Error fetching data. Data not found."); 
+		 }
 		 
+		 view.printLog("Get bad packages QUERY RESULT: "+allBadPackageId);
 		 
 		 ///closing all elements
 		 	animalIdSet.close();

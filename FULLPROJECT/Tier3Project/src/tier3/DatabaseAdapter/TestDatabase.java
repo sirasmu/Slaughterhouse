@@ -6,6 +6,8 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import tier3.Controller.DataController;
+
 public class TestDatabase {
 
 	public static void main(String[] args) {
@@ -121,16 +123,16 @@ public class TestDatabase {
 		
 		String id= "770baf9a-c20c-4832-9cb1-7a9385c7b78b";
 		ArrayList<String> badPackageCollection=null; 
-		
+		DataController controller= new DataController();
 		try {
-		badPackageCollection = adapter.getBadPackages(id);
-		} catch (SQLException e) {
+		badPackageCollection = controller.getBadPackages(id);
+		} catch (Exception e) {
 			System.out.println("BROKEN AT ADD getBadPackage");
 			e.printStackTrace();
 		}
-		catch( Exception e1){
-			System.out.println("NO PACKAGES RETRIEVED");
-		}
+//		catch( Exception e1){
+//			System.out.println("NO PACKAGES RETRIEVED");
+//		}
 		System.out.println("List of bad packages is:");
 		try{
 		for(String el: badPackageCollection){

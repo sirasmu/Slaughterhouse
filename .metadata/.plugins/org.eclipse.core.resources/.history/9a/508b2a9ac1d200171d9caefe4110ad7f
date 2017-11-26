@@ -1,0 +1,35 @@
+package tier3.RMIServer;
+
+import java.net.InetAddress;
+import java.rmi.Naming;
+import java.rmi.Remote;
+import java.rmi.registry.LocateRegistry;
+
+import common.Config;
+import common.ISlaughterhouseDataRemote;
+import tier3.Controller.DataController;
+import tier3.RMIAdaptor.SlaughterhouseDataRemote;
+
+public class T3RMIServer
+{
+	public static void main(String[] args)
+	{
+		try
+		{
+			LocateRegistry.createRegistry(1099);
+
+			ISlaughterhouseDataRemote remote = new SlaughterhouseDataRemote();
+
+			Naming.rebind(Config.TIER_3_SERVICE, remote);
+
+			System.out.println("Tier 3 server listening on " + InetAddress.getLocalHost().getHostAddress());
+			
+			remote.getBadPackages("680f7acb-5cd9-497b-90d9-a3ef5aae0a97");
+			
+			
+		} catch (Exception ex)
+		{
+			ex.printStackTrace();
+		}
+	}
+}

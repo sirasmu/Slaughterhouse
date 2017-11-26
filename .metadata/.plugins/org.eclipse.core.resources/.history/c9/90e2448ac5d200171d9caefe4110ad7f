@@ -1,0 +1,39 @@
+package webservice;
+
+import java.io.Console;
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+import tier2.Controller.BadPackageController;
+
+public class BadPackageFunctionality {
+
+	
+	public static String getBadPackages(String pk){
+		//JOptionPane.showConfirmDialog( null, "received: " +pk+ " original: 770baf9a-c20c-4832-9cb1-7a9385c7b78b"  );
+		BadPackageController controller = new BadPackageController();
+		ArrayList<String> allPackages= controller.getAllBadPackages(pk);
+		
+		if(allPackages==null)
+			return "nothing found";
+		
+		//JOptionPane.showConfirmDialog( null, "First package is "+allPackages.get(0) );
+		String ready=""; 
+		try{
+		for(String el: allPackages){
+			ready+= el+":";
+		}
+		ready= ready.substring(0, ready.length()-1);
+
+		}
+		catch(Exception e)
+		{
+			//JOptionPane.showConfirmDialog( null, "Error is when executing for" );
+		}
+		
+		return ready;
+		
+	}
+	
+}
