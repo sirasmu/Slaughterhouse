@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="RegisterAnimalClient.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="RegisterAnimalClient_localhost_ISlaughterhouseWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/axis2/services/ISlaughterhouseWebService.ISlaughterhouseWebServiceHttpSoap12Endpoint/</Value>
+    </Setting>
+    <Setting Name="RegisterAnimalClient_localhost_IWebServiceBadPackage" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/axis2/services/IWebServiceBadPackage.IWebServiceBadPackageHttpSoap11Endpoint/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

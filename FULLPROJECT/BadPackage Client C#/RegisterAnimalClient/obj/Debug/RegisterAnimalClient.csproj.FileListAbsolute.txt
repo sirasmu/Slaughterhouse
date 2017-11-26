@@ -1,0 +1,10 @@
+C:\Users\Alexandru\source\repos\RegisterAnimalClient\RegisterAnimalClient\bin\Debug\RegisterAnimalClient.exe.config
+C:\Users\Alexandru\source\repos\RegisterAnimalClient\RegisterAnimalClient\bin\Debug\RegisterAnimalClient.exe
+C:\Users\Alexandru\source\repos\RegisterAnimalClient\RegisterAnimalClient\bin\Debug\RegisterAnimalClient.pdb
+C:\Users\Alexandru\source\repos\RegisterAnimalClient\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.csprojResolveAssemblyReference.cache
+C:\Users\Alexandru\source\repos\RegisterAnimalClient\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.Form1.resources
+C:\Users\Alexandru\source\repos\RegisterAnimalClient\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.Properties.Resources.resources
+C:\Users\Alexandru\source\repos\RegisterAnimalClient\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.csproj.GenerateResource.Cache
+C:\Users\Alexandru\source\repos\RegisterAnimalClient\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.csproj.CoreCompileInputs.cache
+C:\Users\Alexandru\source\repos\RegisterAnimalClient\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.exe
+C:\Users\Alexandru\source\repos\RegisterAnimalClient\RegisterAnimalClient\obj\Debug\RegisterAnimalClient.pdb
