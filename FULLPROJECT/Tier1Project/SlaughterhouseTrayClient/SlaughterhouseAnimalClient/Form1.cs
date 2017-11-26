@@ -21,14 +21,13 @@ namespace SlaughterhouseAnimalClient
       {
          InitializeComponent();
          checkedListBox1.SelectionMode = SelectionMode.One;
-         //checkedListBox1.
-         //checkedListBox1.
       }
 
       private void button1_Click( object sender, EventArgs e )
       {
          try
          {
+            checkedListBox1.Items.Clear();
             string msg =  webService.readIncomingMessage( "REQUEST_UNCUT_ANIMALS" );
             string[] split = msg.Split(':');
             string[] animalIds = split[1].Split(',');
