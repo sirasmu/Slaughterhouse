@@ -51,9 +51,9 @@ public class WebServiceManager implements ISlaughterhouseWebService
 			/* PackClient */
 			case WebServiceConfig.REQUEST_TRAYS_READY_FOR_PACKAGING: // REQUEST_TRAYS_READY_FOR_PACKAGING HAM
 				return responseWithTraysById(getReadyTraysByType(message)); // RESPONSE_TRAYS_READY_FOR_PACKAGING trays:97c5134f-13e7-4d0c-8bd3-1d5cf5e0036a,97c5134f-13e7-4d0c-8bd3-1d5cf5e0036a
-			case WebServiceConfig.REGISTER_PACKAGE: // REGISTER_PACKAGE type trays:97c5134f-13e7-4d0c-8bd3-1d5cf5e0036a,97c5134f-13e7-4d0c-8bd3-1d5cf5e0036a
-				TrayCollection trays = getReadyTraysById(message); // REGISTER_PACKAGE half_an_animal trays:97c5134f-13e7-4d0c-8bd3-1d5cf5e0036a,97c5134f-13e7-4d0c-8bd3-1d5cf5e0036a			
-				AbstractPackage pk = packageByProductType(message, trays);
+			case WebServiceConfig.REGISTER_PACKAGE: // REGISTER_PACKAGE trays:97c5134f-13e7-4d0c-8bd3-1d5cf5e0036a,97c5134f-13e7-4d0c-8bd3-1d5cf5e0036a
+				TrayCollection trays = getReadyTraysById(message); // REGISTER_PACKAGE trays:97c5134f-13e7-4d0c-8bd3-1d5cf5e0036a,97c5134f-13e7-4d0c-8bd3-1d5cf5e0036a			
+				AbstractPackage pk = packageByProductType(trays);
 				controller.registerPackage(pk); 
 				return "Registered package";
 			default: 
@@ -64,7 +64,7 @@ public class WebServiceManager implements ISlaughterhouseWebService
 	private String responseWithUncutAnimals(AnimalCollection notSplitAnimals)
 	{
 		String response = WebServiceConfig.RESPONSE_UNCUT_ANIMALS;
-		response += " animals:"; //Don't have it hardcoded!!!
+		response += " animals:"; //change hardcoded strings to something else in the future
 		for(int i = 0; i < notSplitAnimals.getAnimalCollection().size(); i++){
 			if(i < notSplitAnimals.getAnimalCollection().size() -1){
 				response += notSplitAnimals.getAnimalCollection().get(i).getAnimalId() + ",";
@@ -78,20 +78,22 @@ public class WebServiceManager implements ISlaughterhouseWebService
 	}
 	
 	/* Could probably be refactored */
-	private AbstractPackage packageByProductType(String message, TrayCollection trays)
+	private AbstractPackage packageByProductType(TrayCollection trays)
 	{
-		String[] splitMessage = message.split(" ");
-		String packageProductType = splitMessage[1];
 		AbstractPackage pk; 
-		if(packageProductType.equals(WebServiceConfig.PACKAGE_BY_TYPE))
+		if(trays.isAllTraysOfType(PartType.HAM))
 		{
-			pk = new PackageByType(new TrayCollection(), trays.getTrayCollection().get(0).getType()); // Bad refactor
+			pk = new PackageByType(trays, PartType.HAM); 
 		}
-		else if (packageProductType.equals(WebServiceConfig.PACKAGE_HALF_ANIMAL))
+		else if(trays.isAllTraysOfType(PartType.LEG))
 		{
-			pk = new PackageHalfAnAnimal(new TrayCollection());
+			pk = new PackageByType(trays, PartType.LEG);
 		}
-		return null;
+		else
+		{
+			pk = new PackageHalfAnAnimal(trays);
+		}
+		return pk;
 	}
 
 	private TrayCollection getReadyTraysById(String message)
