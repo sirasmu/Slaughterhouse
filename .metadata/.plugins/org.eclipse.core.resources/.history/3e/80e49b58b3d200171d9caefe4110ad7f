@@ -1,0 +1,67 @@
+package tier2.Controller;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.rmi.Naming;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import common.ISlaughterhouseDataRemote;
+import common.model.*;
+import tier2.view.View;
+
+
+public class BadPackageController {
+
+	private View view;	
+	private ISlaughterhouseDataRemote databaseRemote;
+	
+	public BadPackageController(){
+		this.view = new View();
+
+	}
+	
+	/*
+	 * Constructor without connection to the tier 3 
+	 */
+	public BadPackageController(){
+		this.view = new View();
+	}
+
+	
+	public ArrayList<String> getAllBadPackages(String id){
+		
+		
+		try
+		{
+			//Contact address Server
+			String tier3URL= "rmi://192.168.255.1/tier3";
+			
+			ISlaughterhouseDataRemote dataRemote = (ISlaughterhouseDataRemote) Naming.lookup( tier3URL );	
+						
+			//AnimalCollection myAnimals = new AnimalCollection();			
+			//myAnimals.add(new Animal(10.0));
+			
+			//dataRemote.saveAnimals(myAnimals);
+			
+			//START CONTROLLER
+			//BadPackageController sysController = new BadPackageController(dataRemote);
+			
+		} catch (Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		
+		try {
+			String tier3URL= "rmi://192.168.255.1/tier3";
+			ISlaughterhouseDataRemote dataRemote = (ISlaughterhouseDataRemote) Naming.lookup( tier3URL );	
+	
+			return dataRemote.getBadPackages(id);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+}

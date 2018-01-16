@@ -1,0 +1,45 @@
+package tier2.RMIClient;
+
+import java.net.InetAddress;
+import java.rmi.Naming;
+import java.rmi.registry.LocateRegistry;
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+import common.ISlaughterhouseDataRemote;
+import common.model.*;
+import common.*;
+import tier2.Controller.*;
+import webservice.string;
+
+public class ClientTest
+{
+
+	public static void main(String[] args)
+	{
+		//BadPackageController sysController = new BadPackageController();
+		ArrayList<String> allPackages= new ArrayList<String>();
+		int count=0;
+		while(i<5){
+		allPackages.add("Alex");
+		count++;
+		}
+		String ready=""; 
+		for(String el: allPackages){
+			ready= String.format("{0;3}",el);
+		}
+		
+		
+		return "test";
+		
+		
+			String [] sArr = new String [allPackages.size()];
+
+	        for (int i = 0; i < allPackages.size(); i++)
+	            sArr[i] = String.Format("{0,-3}", i * multVal);
+
+	        return String.Join(sep, sArr);
+		
+	}
+}

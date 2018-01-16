@@ -1,0 +1,18 @@
+package webservice;
+
+import java.util.ArrayList;
+
+import tier2.Controller.BadPackageController;
+
+public class BadPackageFunctionality {
+
+	
+	public static String getBadPackages(String pk){
+		
+		BadPackageController controller = new BadPackageController();
+		ArrayList<String> allPackages= controller.getAllBadPackages(id);
+		
+		return "test";
+	}
+	
+}

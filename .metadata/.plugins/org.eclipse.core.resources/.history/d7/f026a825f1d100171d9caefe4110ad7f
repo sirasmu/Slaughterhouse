@@ -1,0 +1,21 @@
+package tier2.Controller;
+
+import java.util.ArrayList;
+
+import common.model.*;
+
+public class TEST_TIER2_FUNCTIONALITY {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		BadPackageController sysController = new BadPackageController();
+		
+		ArrayList<String> list= sysController.getAllBadPackages("770baf9a-c20c-4832-9cb1-7a9385c7b78b");
+		
+		System.out.println("List of bad packages is:");
+		for(String el: list){
+			System.out.println(el);
+		}
+}
+}

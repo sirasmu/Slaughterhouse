@@ -1,0 +1,11 @@
+package webservice;
+
+public class WebServiceBadPackage implements IWebServiceBadPackage{
+
+	@Override
+	public String getBadPackages() {
+		// TODO Auto-generated method stub
+		return new BadPackageFunctionality().getBadPackages();
+	}
+
+}

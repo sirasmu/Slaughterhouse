@@ -1,0 +1,35 @@
+package tier2.Controller;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import common.ISlaughterhouseDataRemote;
+import common.model.*;
+import tier2.view.View;
+
+
+public class RegisterSystemController {
+
+	private View view;	
+	private ISlaughterhouseDataRemote databaseRemote;
+	
+	public RegisterSystemController(ISlaughterhouseDataRemote databaseRemote){
+		this.view = new View();
+
+	}
+	
+	/*
+	 * Constructor without connection to the tier 3 
+	 */
+	public RegisterSystemController(){
+		this.view = new View();
+		this.modelController= new ModelAdministratorController();
+		this.animals= new AnimalCollection();
+		this.traysHam= new TrayCollection();
+		this.traysLeg= new TrayCollection();
+		this.packages= new PackageCollection();
+	}
+
+	
+}

@@ -1,0 +1,32 @@
+package webservice;
+
+import java.util.ArrayList;
+
+import tier2.Controller.BadPackageController;
+
+public class BadPackageFunctionality {
+
+	
+	public static String getBadPackages(String pk){
+		
+		BadPackageController controller = new BadPackageController();
+		ArrayList<String> allPackages= controller.getAllBadPackages(pk);
+		String ready=""; 
+		for(String el: allPackages){
+			ready= String.format("{0,3}",el);
+		}
+		
+		
+		return "test";
+		
+		
+		 string [] sArr = new string [10];
+
+	        for (int i = initVal; i < initVal + 10; i++)
+	            sArr[i - initVal] = String.Format("{0,-3}", i * multVal);
+
+	        return String.Join(sep, sArr);
+		
+	}
+	
+}

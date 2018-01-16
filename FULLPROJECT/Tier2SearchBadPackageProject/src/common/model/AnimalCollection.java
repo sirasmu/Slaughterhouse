@@ -1,0 +1,31 @@
+package common.model;
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class AnimalCollection implements Serializable
+{
+	private ArrayList<Animal> animals;
+	
+	public AnimalCollection()
+	{
+		animals = new ArrayList<>();
+	}
+	
+	public void add(Animal animal)
+	{
+		animals.add(animal);
+	}
+	
+	public ArrayList<Animal> getAnimalCollection(){
+		return animals;
+	}
+	
+	public Animal findAnimalById(String id){
+		for(Animal an: animals){
+			if (an.getAnimalId().equals(id))
+				return an;
+		}
+		return null;
+	}
+	
+}

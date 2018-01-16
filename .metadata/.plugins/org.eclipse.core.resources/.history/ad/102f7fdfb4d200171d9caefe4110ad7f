@@ -1,0 +1,22 @@
+package tier2.RMIClient;
+
+import java.net.InetAddress;
+import java.rmi.Naming;
+import java.rmi.registry.LocateRegistry;
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+import common.ISlaughterhouseDataRemote;
+import common.model.*;
+import common.*;
+import tier2.Controller.*;
+
+public class ClientTest
+{
+
+	public static void main(String[] args)
+	{
+		BadPackageController sysController = new BadPackageController();
+	}
+}

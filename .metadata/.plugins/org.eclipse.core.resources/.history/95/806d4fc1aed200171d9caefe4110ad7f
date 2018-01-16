@@ -1,0 +1,9 @@
+package webservice;
+
+public class BadPackageFunctionality {
+
+	public String getBadPackages(){
+		return "";
+	}
+	
+}

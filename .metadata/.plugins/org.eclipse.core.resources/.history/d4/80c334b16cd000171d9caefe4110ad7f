@@ -1,0 +1,11 @@
+package tier2.webservice;
+
+public class RegisterServiceImplementation implements ISlaughterhouseWebService {
+
+	@Override
+	public String contactTier2(String message) {
+		// TODO Auto-generated method stub
+		System.out.println("Tier 2 "+message);
+	}
+
+}
