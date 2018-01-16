@@ -1,4 +1,4 @@
-# Slaughterhouse- 3 tier architecture 
+# Slaughterhouse: 3-tier architecture 
  
 The three tiers in the slaughterhouse system are: 
 
